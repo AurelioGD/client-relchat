@@ -1,16 +1,17 @@
-import { ThemeProvider } from "styled-components";
+import { Routes, Route } from "react-router-dom";
 import Menu from "./components/layout/Menu";
 import Normalize from "./components/styled/Normalize";
-import theme from "./components/styled/theme";
+import PublicChats from "./views/publicChats";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Normalize />
-        <Menu />
-      </div>
-    </ThemeProvider>
+    <div className="App">
+      <Menu />
+      <Routes>
+        <Route path="/public-chats" element={<PublicChats />} />
+      </Routes>
+      <Normalize />
+    </div>
   );
 }
 
