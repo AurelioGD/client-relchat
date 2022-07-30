@@ -1,15 +1,16 @@
-import Container from "../../components/styled/Container"
 import usePublicChats from "../../hooks/usePublicChats"
 import ChatCard from "../../components/layout/ChatCard"
+import FlexContainer from "../../components/styled/FlexContainer"
 
 const PublicChats = () => {
-  const {publicChats} = usePublicChats()  
+  const { publicChats } = usePublicChats()
+
   return (
-    <Container>
-        {
-          publicChats.map((chat) => <ChatCard key={chat._id} chatData={chat}/>)
-        }
-    </Container>
+    <FlexContainer width="70%" margin="1rem auto auto auto" flexW="wrap">
+      {publicChats.map((chat) => (
+        <ChatCard key={chat._id} chatData={chat} />
+      ))}
+    </FlexContainer>
   )
 }
 

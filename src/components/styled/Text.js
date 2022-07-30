@@ -1,7 +1,5 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-const Text = styled.p`
-
-`
+const Text = styled.p``
 
 export default Text

@@ -1,7 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-import Menu from "./components/layout/Menu";
-import Normalize from "./components/styled/Normalize";
-import PublicChats from "./views/publicChats";
+import { Routes, Route } from "react-router-dom"
+import Menu from "./components/layout/Menu"
+import Normalize from "./components/styled/Normalize"
+import PublicChats from "./views/publicChats"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       </Routes>
       <Normalize />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

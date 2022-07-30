@@ -23,7 +23,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        2,
+        "never"
+      ]
+    }
+  },
+  "prettier": {
+    "semi": false
   },
   "browserslist": {
     "production": [

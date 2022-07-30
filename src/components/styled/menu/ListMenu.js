@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const ListMenu = styled.ul`
-  color: ${({ theme }) => theme.primary.white};
+  color: ${({ theme }) => theme.colors.white};
   margin: 0;
   height: ${({ theme }) => theme.sizes.headerSize};
   max-width: 40rem;
@@ -10,11 +10,11 @@ const ListMenu = styled.ul`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  font-family: "Roboto", sans-serif;
-`;
+  font-family: ${({ theme }) => theme.fonts.primary};
+`
 
 const ItemMenu = styled.li`
   list-style: none;
-`;
+`
 
-export { ListMenu, ItemMenu };
+export { ListMenu, ItemMenu }

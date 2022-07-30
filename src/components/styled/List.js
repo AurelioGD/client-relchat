@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-const List = styled.ul``;
+const List = styled.ul``
 
-const Item = styled.li``;
+const Item = styled.li``
 
-export { List, Item };
+export { List, Item }
