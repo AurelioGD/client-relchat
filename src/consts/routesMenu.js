@@ -12,12 +12,12 @@ const routesMenu = [
     route: "/public-chats",
   },
   {
-    label: "Friends chats",
-    route: "/friends-chats",
-  },
-  {
     label: "Friends",
     route: "/friends",
+  },
+  {
+    label: "Log out",
+    route: "/log-out",
   },
 ]
 
