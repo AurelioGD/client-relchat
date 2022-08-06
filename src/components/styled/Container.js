@@ -7,6 +7,7 @@ const Container = styled.div`
   border: ${({ border }) => border || ""};
   border-radius: ${({ borderRa }) => borderRa || ""};
   background-color: ${({ bc }) => bc || ""};
+  color: ${({ color }) => color || ""};
   box-shadow: ${({ boxShadow }) => boxShadow || ""};
   font-family: ${({ fontF }) => fontF || ""};
 `
