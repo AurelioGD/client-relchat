@@ -14,6 +14,7 @@ const Menu = () => {
   return (
     <FlexContainer
       jc="space-between"
+      ai="center"
       bc={colors.violet}
       height={sizes.headerSize}
     >

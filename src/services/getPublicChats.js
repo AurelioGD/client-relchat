@@ -1,4 +1,4 @@
-import apiConfig from "../config/apiConfig"
+import apiConfig from "../consts/api"
 const { API_BASE_URL } = apiConfig
 
 const getPublicChats = async () => {
