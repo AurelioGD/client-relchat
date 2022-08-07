@@ -40,7 +40,7 @@ const Login = () => {
       legendConfig={{
         legendText: "Don't have an account?",
         legendUrlText: "Sign up",
-        legendUrl: "www.google.com",
+        legendUrl: "../signup",
       }}
       containerStyle={{
         margin: "5rem auto 0 auto",

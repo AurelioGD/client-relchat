@@ -7,6 +7,7 @@ import UserProvider from "./contexts/UserProvider"
 import Login from "./views/login"
 import { ROUTES } from "./consts/routes"
 import signOut from "./services/supabase/signOut"
+import Signup from "./views/signup"
 
 function LogOut(){
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
         <MenuProvider>
           <Routes>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/signup" element={<Signup/>}/>
             <Route path="/public-chats" element={<PublicChats />} />
             <Route path="/log-out" element={<LogOut/>} />
           </Routes>
