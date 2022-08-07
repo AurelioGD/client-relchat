@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import getPublicChats from "../services/getPublicChats"
+import getPublicChats from "../services/chats/getPublicChats"
 
 const usePublicChats = () => {
   const [publicChats, setPublicChats] = useState([])

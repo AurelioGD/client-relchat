@@ -4,7 +4,7 @@ import { ItemMenu, ListMenu } from "../styled/menu/ListMenu"
 import Logo from "../styled/menu/Logo"
 import LogoContainer from "../styled/menu/LogoContainer"
 import MenuContainer from "../styled/menu/MenuContainer"
-import routesMenu from "../../consts/routesMenu"
+import { ROUTES_MENU } from "../../consts/routes"
 import LinkAnchor from "../styled/menu/LinkAnchor"
 
 const Menu = () => {
@@ -23,7 +23,7 @@ const Menu = () => {
       </LogoContainer>
       <MenuContainer>
         <ListMenu>
-          {routesMenu.map(({ label, route }, index) => (
+          {ROUTES_MENU.map(({ label, route }, index) => (
             <ItemMenu key={`${label}-${index}`}>
               <LinkAnchor to={route}>{label}</LinkAnchor>
             </ItemMenu>

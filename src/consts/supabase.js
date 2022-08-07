@@ -1,6 +1,10 @@
-const supabase = {
-    SUPABASE_URL: process.env.REACT_APP_SUPABASE_URL,
-    SUPABASE_KEY: process.env.REACT_APP_SUPABASE_KEY,
-}
+export const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL
+export const SUPABASE_KEY = process.env.REACT_APP_SUPABASE_KEY
 
-export default supabase
+export const SUPABASE_AUTH_EVENTS = {
+    SIGNED_IN: 'SIGNED_IN',
+    SIGNED_OUT: 'SIGNED_OUT',
+    USER_UPDATED: 'USER_UPDATED',
+    USER_DELETED: 'USER_DELETED',
+    PASSWORD_RECOVERY: 'PASSWORD_RECOVERY'
+}

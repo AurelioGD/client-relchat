@@ -1,5 +1,4 @@
-import apiConfig from "../consts/api"
-const { API_BASE_URL } = apiConfig
+import { API_BASE_URL } from "../../consts/api"
 
 const getPublicChats = async () => {
   const rawData = await fetch(`${API_BASE_URL}/public/chats`)
