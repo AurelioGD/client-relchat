@@ -10,15 +10,16 @@ import Text from "../../styled/Text"
 const CardFormProvider = ({
   children,
   title = "title",
-  buttonLabel = "label",
+  buttonLabel = "button",
   legendConfig = {},
+  containerStyle={},
   onSubmit = () => {},
 }) => {
   const { shades, fonts, colors } = useTheme()
   const { legendText = "", legendUrlText = "", legendUrl = "" } = legendConfig
 
   const handleSubmit = (e) => {
-    e.PreventDefault()
+    e.preventDefault()
     onSubmit()
   }
   return (
@@ -26,15 +27,19 @@ const CardFormProvider = ({
       fontF={fonts.primary}
       color={colors.white}
       width="20rem"
-      height="30rem"
       boxShadow={shades.card}
+      {...containerStyle}
     >
-      <FlexContainer bc="violet" jc="center" ai="center" height="4rem">
+      <FlexContainer bc="violet" jc="center" ai="center" height="3.4rem" margin="0 0 0.5rem 0">
         <Subtitle>{title}</Subtitle>
       </FlexContainer>
       <Form onSubmit={handleSubmit}>
         {children}
-        <Button>{buttonLabel}</Button>
+        <Button
+          width="6rem"
+          height="2rem"
+          margin="1rem 0 1rem 0"
+        >{buttonLabel}</Button>
       </Form>
       <FlexContainer jc="center" ai="center" height="2rem" color={colors.gray}>
         {legendConfig && (

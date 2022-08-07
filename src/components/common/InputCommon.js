@@ -3,7 +3,7 @@ import FlexContainer from "../styled/FlexContainer"
 import Input from "../styled/Input"
 import Icon from "./Icon"
 
-const InputCommon= ({ iconName = "" }) => {
+const InputCommon= ({ iconName = "", containerStyle={}, ...restProps }) => {
   const { fonts } = useTheme()
   return (
     <FlexContainer
@@ -11,6 +11,7 @@ const InputCommon= ({ iconName = "" }) => {
       width="16rem"
       height="3rem"
       fontF={fonts.primary}
+      {...containerStyle}
     >
       <FlexContainer
         jc="center"
@@ -25,7 +26,7 @@ const InputCommon= ({ iconName = "" }) => {
         width="100%"
         height="3rem"
         border="none"
-        placeholder="type your username"
+        {...restProps}
       />
     </FlexContainer>
   )

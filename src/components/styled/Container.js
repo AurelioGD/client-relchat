@@ -4,6 +4,7 @@ const Container = styled.div`
   width: ${({ width }) => width || "100%"};
   height: ${({ height }) => height || "100%"};
   margin: ${({ margin }) => margin || ""};
+  padding: ${({ padding }) => padding || ""};
   border: ${({ border }) => border || ""};
   border-radius: ${({ borderRa }) => borderRa || ""};
   background-color: ${({ bc }) => bc || ""};
