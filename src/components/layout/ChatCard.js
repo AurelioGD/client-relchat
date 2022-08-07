@@ -11,7 +11,7 @@ const ChatCard = ({ chatData }) => {
   const { _id, name, owner, image, members } = chatData
   const membersCount = members.length
 
-  const { colors, shades, fonts } = useTheme()
+  const { colors, fonts } = useTheme()
 
   return (
     <FlexContainer
@@ -21,7 +21,7 @@ const ChatCard = ({ chatData }) => {
       borderRa="1rem"
       fontF={fonts.primary}
       bc={colors.white}
-      boxShadow={shades.card}
+      boxShadow={"card"}
       flexD="column"
       ai="center"
     >
