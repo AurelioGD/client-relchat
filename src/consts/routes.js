@@ -1,10 +1,12 @@
 export const ROUTES = {
+  ROOT: "/",
   PROFILE: "/profile",
   MY_CHATS: "/my-chats",
   PUBLIC_CHATS: "/public-chats",
   FRIENDS: "/friends",
   LOG_OUT: "/log-out",
-  LOGIN: "/login"
+  LOGIN: "/login",
+  SIGN_UP: "/signup"
 }
 
 export const ROUTES_MENU = [
