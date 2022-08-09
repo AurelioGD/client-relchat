@@ -4,6 +4,8 @@ import { ROUTES } from "../../consts/routes"
 import CardFormProvider from "../../components/layout/providers/CardFormProvider"
 import InputCommon from "../../components/common/InputCommon"
 import { AreEqual, isEmail, isTheStateEmpty } from "../../utils/formValidations"
+import createUser from "../../services/users/createUser"
+import signUp from "../../services/supabase/signUp"
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -30,7 +32,18 @@ const Signup = () => {
     const { name, username, email, password, passwordAgain } = signupFormState
 
     if (!AreEqual(password, passwordAgain)) return
+
     if(!isEmail(email)) return
+
+    const { user, session, error } = await signUp(email, password)
+    
+    if (user && !error) {
+      const response = await createUser({name, username, email})
+
+      if(!response.error){
+        navigate(ROUTES.LOGIN, { replace: true })
+      }
+    }
 
     
   }
