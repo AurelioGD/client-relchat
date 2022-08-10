@@ -6,6 +6,7 @@ import MenuProvider from "./components/layout/providers/MenuProvider"
 import UserProvider from "./contexts/UserProvider"
 import Login from "./views/login"
 import Signup from "./views/signup"
+import Notification from "./views/notification"
 import IfUserSessionExists from "./routes/IfUserSessionExists"
 import IfNotUserSessionExists from "./routes/IfNotUserSessionExists"
 import signOut from "./services/supabase/signOut"
@@ -24,7 +25,10 @@ function App() {
       <UserProvider>
         <MenuProvider>
           <Routes>
-            <Route path={ROUTES.ROOT} element={<Navigate to={ROUTES.LOGIN} />} />
+            <Route
+              path={ROUTES.ROOT}
+              element={<Navigate to={ROUTES.LOGIN} />}
+            />
             <Route
               path={ROUTES.LOGIN}
               element={
@@ -41,7 +45,14 @@ function App() {
                 </IfNotUserSessionExists>
               }
             />
-
+            <Route
+              path={ROUTES.NOTIFICATION}
+              element={
+                <IfNotUserSessionExists>
+                  <Notification />
+                </IfNotUserSessionExists>
+              }
+            />
             <Route
               path={ROUTES.PUBLIC_CHATS}
               element={

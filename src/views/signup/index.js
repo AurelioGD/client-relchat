@@ -33,20 +33,20 @@ const Signup = () => {
 
     if (!AreEqual(password, passwordAgain)) return
 
-    if(!isEmail(email)) return
-    
+    if (!isEmail(email)) return
+
     try {
       const { user, session, error } = await signUp(email, password)
-    
+
       if (user && !error) {
-        const response = await createUser({name, username, email})
-  
-        if(!response.error){
+        const response = await createUser({ name, username, email })
+
+        if (!response.error) {
           navigate(ROUTES.LOGIN, { replace: true })
         }
       }
     } catch (error) {
-        console.error("Error: ", error)
+      console.error("Error: ", error)
     }
   }
 

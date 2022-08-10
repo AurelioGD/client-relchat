@@ -1,9 +1,12 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { ROUTES } from "../../consts/routes"
+import { SUPABASE_AUTH_ERROR_MESSAGES } from "../../consts/supabase"
 import signIn from "../../services/supabase/signIn"
 import CardFormProvider from "../../components/layout/providers/CardFormProvider"
 import InputCommon from "../../components/common/InputCommon"
+import { isEmail, isTheStateEmpty } from "../../utils/formValidations"
+const { EMAIL_NOT_CONFIRMED } = SUPABASE_AUTH_ERROR_MESSAGES
 
 const Login = () => {
   const navigate = useNavigate()
@@ -22,10 +25,17 @@ const Login = () => {
   }
 
   const handleSubmit = async (e) => {
-    if (!loginFormState.email || !loginFormState.password) return
+    if (isTheStateEmpty(loginFormState)) return
+
     const { email, password } = loginFormState
 
+    if (!isEmail(email)) return
+
     const { user, error } = await signIn(email, password)
+
+    if (error.message === EMAIL_NOT_CONFIRMED) {
+      navigate(ROUTES.NOTIFICATION, { replace: true })
+    }
 
     if (user && !error) {
       navigate(ROUTES.PUBLIC_CHATS, { replace: true })

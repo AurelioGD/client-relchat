@@ -6,7 +6,8 @@ export const ROUTES = {
   FRIENDS: "/friends",
   LOG_OUT: "/log-out",
   LOGIN: "/login",
-  SIGN_UP: "/signup"
+  SIGN_UP: "/signup",
+  NOTIFICATION: "/notification",
 }
 
 export const ROUTES_MENU = [
