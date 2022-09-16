@@ -1,5 +1,6 @@
 import { API_BASE_URL, API_ROUTES } from "../../consts/api"
-const { PUBLIC_CHATS } = API_ROUTES
+const { CHAT } = API_ROUTES
+const { PUBLIC_CHATS }  = CHAT
 
 const getPublicChats = async () => {
   const rawData = await fetch(API_BASE_URL+PUBLIC_CHATS)

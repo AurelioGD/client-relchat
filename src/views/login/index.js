@@ -33,7 +33,7 @@ const Login = () => {
 
     const { user, error } = await signIn(email, password)
 
-    if (error.message === EMAIL_NOT_CONFIRMED) {
+    if (error?.message === EMAIL_NOT_CONFIRMED) {
       navigate(ROUTES.NOTIFICATION, { replace: true })
     }
 
